@@ -1,0 +1,14 @@
+{% extends 'skills/main-layout.html'%}
+{% block main_section %}
+    <div class="skills" style="width:80%; height: auto">
+        <h1>{{ object.title }}</h1>
+
+
+        {% if object.img %}
+            <img style="width:70%; height=60%;" src="{{ object.img.url }}" alt="{{ object.title }}">
+        {% else %}
+            <img style="width:70%; height=60%;" src="/pictures/default.jpg" alt="{{ object.title }}">
+        {% endif %}
+        <p>{{ object.description }}</p>
+    </div>
+{% endblock %}

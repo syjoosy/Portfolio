@@ -1,0 +1,27 @@
+.container {
+  text-align: center;
+}
+
+.form-section {
+  margin-top: 40px;
+}
+
+.form-section h2 {
+  margin-bottom: 40px;
+}
+
+
+.exit-a {
+  margin-top: 10px;
+  background: #f1c40f;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  color: #1b2631
+}
+.exit-a:hover {
+  background: #1b2631;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+}

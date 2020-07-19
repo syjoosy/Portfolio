@@ -1,0 +1,79 @@
+{% extends 'skills/main-layout.html' %}
+{% block main_section %}
+<div class="container">
+  <div class="form-section">
+    <style>
+      .myfield{
+            border:1px solid #ccc;
+            border-radius:5px;
+            height:25px;
+            width:200px;
+            margin: 20px;
+            padding: 7px;
+        }
+       .registration-btn {
+        margin: 20px auto;
+        background: #f1c40f;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        margin-top: 10px;
+        color: #1b2631
+       }
+
+       .registration-btn:hover {
+        background: #1b2631;
+        border: 2px solid #f1c40f;
+        color: #f1c40f;
+      }
+
+}
+      h2 {
+      padding: 5px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      }
+
+      form {
+      border:1px solid #ccc;
+      border-radius:5px;
+
+      }
+      li {
+      list-style-type: none; /* Убираем маркеры */
+       }
+      .registration {
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+
+      }
+      span {
+      font-size: 15px;
+      }
+    </style>
+    <div class="registration">
+    <h2>Регистрация на сайтe</h2>
+      <form  method="post">
+        {% csrf_token %}
+         <div>
+        {% for field in form %}
+        <div class="">
+            {{field.label_tag}}
+            <div class="">{{field}}</div>
+          {% if field.help_text %}
+        <span>{{ field.help_text }}</span>
+        {% endif %}
+        {% for error in field.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+        </div>
+        {% endfor %}
+        </div>
+      <button class="registration-btn" type="submit">Зарегистрироваться</button>
+    </form>
+    Уже зарегистрированы? <a href="{% url 'user' %}">Войти в личный кабинет</a>
+  </div>
+  </div>
+</div>
+{% endblock main_section %}

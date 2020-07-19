@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/skills/home.css">
+    <link rel="stylesheet" href="/static/skills/exit.css">
+    <link rel="stylesheet" href="/static/skills/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/32a274ae1a.js" crossorigin="anonymous"></script>
+    <title>{{ title }}</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function(){
+
+         $(window).scroll(function(){
+         if ($(this).scrollTop() > 100) {
+         $('.scrollup').fadeIn();
+         } else {
+         $('.scrollup').fadeOut();
+         }
+         });
+
+         $('.scrollup').click(function(){
+         $("html, body").animate({ scrollTop: 0 }, 600);
+         return false;
+         });
+
+         });
+    </script>
+</head>
+<a href="#" class="scrollup">Наверх</a>
+<body>
+
+    <div class="big-shapka">
+        <div class="shakpa">
+            <div class="shapka-p" style="weight: 20px">
+                <a href="/">syjoosy портфолио</a>
+            </div>
+            <div class="shapka-a">
+                <a href="{% url 'works' %}">Мои работы</a>
+                <a href="{% url 'me' %}">Обо мне</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}">{{ user.username }}</a>
+                    <a href="{% url 'exit' %}">Выйти</a>
+                {% else %}
+                    <a href="{% url 'user' %}">Войти</a>
+                    <a href="{% url 'reg' %}">Регистрация</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% block main_section %}
+    {% endblock %}
+    <div class="wrapper">
+        <div class="content">
+            <div class="footer">
+                <p style="color: white; padding: 10px;">Политика конфиденциальности</p>
+                <p style="color: white; padding: 10px;">2020 - Syjoosy портфолио</p>
+                <div class="footer-right">
+                    <a target="_blank" href="https://www.youtube.com/channel/UCZ8KxmR898bT_6iaX-Jx6wg"><img src="/pictures/youtube.svg"></a>
+                    <a target="_blank" href="https://vk.com/syjoosy"><img src="/pictures/vk.svg"></a>
+                    <a target="_blank" href="https://www.instagram.com/syjoosy/"><img src="/pictures/instagram.svg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

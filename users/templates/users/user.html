@@ -1,0 +1,77 @@
+{% extends 'skills/main-layout.html' %}
+{% block main_section %}
+<div class="container">
+  <div class="form-section">
+    <style>
+         .myfield{
+            border:1px solid #ccc;
+            border-radius:5px;
+            height:25px;
+            width:200px;
+            margin: 20px;
+            padding: 7px;
+         }
+          .registration-btn {
+          border: 2px solid white;
+          border-radius: 7px;
+          background: #ff2400;
+          padding: 10px;
+          text-decoration: none;
+          color: white;
+          margin-bottom:20px;
+         }
+
+       .registration-btn:hover {
+        background: white;
+        border: 2px solid #ff2400;
+        color: #ff2400;
+
+        }
+
+        .user {
+
+        text-align:center;
+        margin-top: 15px;
+        width:40%;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .user-form {
+        padding: 20px;
+        }
+
+        h2 {
+        border:1px solid #ccc;
+        border-radius:5px;
+        }
+
+        form {
+        border:1px solid #ccc;
+        border-radius:5px;
+
+        }
+    </style>
+    <div class="user">
+      <h2>Авторизация на сайте</h2>
+      <form method="POST">
+        {% csrf_token %}
+        <form  method="post">
+          {% csrf_token %}
+          <div class="user-form">
+            {% for field in form %}
+            <div class="">
+              {{field.label_tag}}
+              <div class="">{{field}}</div>
+            </div>
+            {% endfor %}
+          </div>
+          <button type="submit" class="btn btn-outline-warning">Войти</button>
+        </form>
+        </br>
+        Забыли пароль? <a href="{% url 'pass-reset' %}">Получите новый</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock main_section %}

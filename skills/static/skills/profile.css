@@ -1,0 +1,21 @@
+.profile-div {
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   text-align:center;
+
+}
+
+.profile-h2 {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.profile-dno {
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}

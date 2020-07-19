@@ -1,0 +1,52 @@
+{% extends 'skills/main-layout.html' %}
+{% block main_section %}
+<div class="container">
+  <div class="form-section">
+      <style>
+          .myfield{
+            border:1px solid #ccc;
+            border-radius:5px;
+            height:25px;
+            width:200px;
+            margin: 20px;
+            padding: 7px;
+        }
+        .cabinet {
+          border: 2px solid white;
+          border-radius: 7px;
+          background: #ff2400;
+          padding: 10px;
+          text-decoration: none;
+          color: white;
+        }
+
+        .cabinet:hover {
+          background: white;
+          border: 2px solid #ff2400;
+          color: #ff2400;
+
+        }
+
+        table {
+        margin-left: auto;
+        margin-right: auto;
+        }
+      </style>
+    <h2>Создание ссылок</h2>
+<form method="POST">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Send" >
+     {% csrf_token %}
+        <p>Доступные ссылки:</p></br>
+        {% for post in links %}
+        <a href="{% url 'redir' %}">link/{{ post.unew|safe}}</a>
+        {% endfor %}
+</form>
+        {% block link_section %}
+      {% endblock %}
+  </div>
+</div>
+{% endblock main_section %}

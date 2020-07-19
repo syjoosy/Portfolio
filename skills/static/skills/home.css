@@ -1,0 +1,176 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+}
+
+.big-shapka {
+  background:#1b2631;
+  color: #fbfbfb;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.shapka-p {
+  display: inline-block;
+  font-size: 23px;
+}
+
+.shapka-p a {
+  text-decoration: none;
+  color: #fbfbfb;
+}
+
+.shapka-a {
+  font-size: 20px;
+  display: inline-block;
+  float:right;
+}
+
+.shapka-a a {
+  margin: -8px 20px;
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 10px 10px;
+  position: relative;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+  transition: .4s;
+}
+.shapka-a a:hover {
+  background: #54523c;
+}
+.shapka-a a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border: 2px solid rgba(0,0,0,0);
+  transition: .4s;
+}
+.shapka-a a:hover:after {
+  border-color: #f1c40f;
+  width: calc(100% - 10px);
+  height: calc(100% + 10px);
+}
+
+.skills {
+  text-align: center;
+  margin: 30px auto;
+  width: 40%;
+  height: 80%;
+  border: 1px solid black;
+  padding: 23px;
+  border-radius: 5px;
+}
+
+.skills img {
+  border: 2px solid black;
+  margin-bottom: 15px;
+}
+.skills h1{
+  margin-bottom: 10px;
+}
+.skills p {
+  margin-bottom: 10px;
+}
+
+
+.skills a {
+  margin-top: 10px;
+  background: #f1c40f;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  color: #1b2631
+}
+.skills a:hover {
+  background: #1b2631;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+}
+.scrollup {
+ width:40px;
+ height:40px;
+ opacity:0.3;
+ position:fixed;
+ bottom:50px;
+ right:100px;
+ display:none;
+ text-indent:-9999px;
+ margin-bottom: 10px;
+ background: url('../../pictures/icon_top.png') no-repeat;
+}
+body {
+  background: #fafafa;
+ /*background: red;*/
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+}
+button {
+  margin: 10px;
+  background: #f1c40f;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  color: #1b2631
+}
+button:hover {
+  background: #1b2631;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+}
+
+.wrapper {
+  display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+  padding: 5px;
+
+  flex: 1 0 auto;
+	background: #1b2631;
+}
+.footer {
+  flex: 0 0 auto;
+  grid-area: footer;
+}
+
+.footer p {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.footer-right {
+  float: right;
+}
+
+.footer-right img {
+  margin-right: 15px;
+  width: 32px;
+  height: 32px;
+}
